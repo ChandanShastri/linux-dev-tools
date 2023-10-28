@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Scan for binaries
+      - name: Scan files
         run: |
-          win_count=$( ls -l -R | grep -E "*.exe" | wc -l )
+          win_count=$( find ./ -name "*.exe" | wc -l )
           echo "Windows Binary count : $win_count"
-          sh_count=$( ls -l -R | grep -E "*.sh" | wc -l )
+          sh_count=$( find ./ -name "*.sh" | wc -l )
           echo "Shell Script file count : $sh_count"
