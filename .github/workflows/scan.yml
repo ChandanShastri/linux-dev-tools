@@ -1,0 +1,20 @@
+# Check Code for Keywords / Credentials
+
+name: code-scan
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Scan for binaries
+        run: |
+          win_count=$( ls | grep -E "*.exe" | wc -w )
+          echo "Windows Binary count : $win_count"
+          sh_count=$( ls | grep -E "*.sh" | wc -w )
+          echo "Shell Script file count : $sh_count"
