@@ -1,5 +1,7 @@
 #!/bin/bash
 
-cd "$(dirname "$0")"
-pwd
-workdir=$(dirname "$0")
+# Switch to Script's working directory
+workdir=$(cd $(dirname $0) && pwd)
+echo "Script is in $workdir"
+
+mkdir -p data
