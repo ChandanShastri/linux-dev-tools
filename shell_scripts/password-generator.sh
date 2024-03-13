@@ -1,3 +1,4 @@
 #!/bin/bash
 # Generate a 8 character length password.
-openssl rand -hex 8
+read -p "Enter the length of the password :" length
+openssl rand -hex $length
