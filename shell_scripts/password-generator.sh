@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 # Generate a 8 character length password.
-# This will be using hexadecimals
+# This will be using hexadecimals characters
 
 echo -e "\nDefault shell is $SHELL \n"
 
